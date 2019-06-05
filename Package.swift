@@ -1,5 +1,4 @@
-// swift-tools-version:4.1
-
+// swift-tools-version:5.1
 import PackageDescription
 
 let package = Package(
@@ -7,19 +6,16 @@ let package = Package(
     products: [
         .library(
             name: "TimberSwift",
-            targets:  ["TimberSwift"]
-        )
+            targets: ["TimberSwift"]),
     ],
     dependencies: [
     ],
     targets: [
         .target(
             name: "TimberSwift",
-            dependencies: []
-        ),
+            dependencies: []),
         .testTarget(
             name: "TimberSwiftTests",
-            dependencies: ["TimberSwift"]
-        )
+            dependencies: ["TimberSwift"]),
     ]
 )
