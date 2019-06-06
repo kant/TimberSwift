@@ -16,7 +16,7 @@ public protocol TimberProtocol {
     var network: NetworkProtocol { get }
 }
 
-public final class TimberSwift: TimberProtocol {
+public final class Timber: TimberProtocol {
     /** The source for this instance of Timber */
     public let source: Source
     
@@ -59,52 +59,52 @@ public final class TimberSwift: TimberProtocol {
     }
 }
 
-extension TimberSwift: LogDelegate {
+extension Timber: LogDelegate {
     func log(_ logMessage: LogMessage) {
-        TimberSwift.timberApplicationDelegate?.log(logMessage)
+        Timber.timberApplicationDelegate?.log(logMessage)
     }
     
     func log(_ error: TimberError) {
-        TimberSwift.timberApplicationDelegate?.log(error)
+        Timber.timberApplicationDelegate?.log(error)
     }
 }
 
-extension TimberSwift: AnalyticsDelegate {
+extension Timber: AnalyticsDelegate {
     func setScreen(title: String) {
-        TimberSwift.timberApplicationDelegate?.setScreen(title: title, source: source)
+        Timber.timberApplicationDelegate?.setScreen(title: title, source: source)
     }
     
     func recordEvent(title: String, properties: [String: Any]?) {
-        TimberSwift.timberApplicationDelegate?.recordEvent(title: title, properties: properties, source: source)
+        Timber.timberApplicationDelegate?.recordEvent(title: title, properties: properties, source: source)
     }
 }
 
-extension TimberSwift: UserMessageDelegate {
+extension Timber: UserMessageDelegate {
     func toast(_ message: String, displayTime: TimeInterval, type: ToastType) {
-        TimberSwift.timberApplicationDelegate?.toast(message, displayTime: displayTime, type: type, source: source)
+        Timber.timberApplicationDelegate?.toast(message, displayTime: displayTime, type: type, source: source)
     }
 }
 
-extension TimberSwift: PerformanceDelegate {
+extension Timber: PerformanceDelegate {
     func startTrace(key: String, identifier: UUID?, properties: [String: Any]?) {
-        TimberSwift.timberApplicationDelegate?.startTrace(key: key, identifier: identifier, properties: properties, source: source)
+        Timber.timberApplicationDelegate?.startTrace(key: key, identifier: identifier, properties: properties, source: source)
     }
     
     func incrementTraceCounter(key: String, identifier: UUID?, named: String, by count: Int) {
-        TimberSwift.timberApplicationDelegate?.incrementTraceCounter(key: key, identifier: identifier, named: named, by: count, source: source)
+        Timber.timberApplicationDelegate?.incrementTraceCounter(key: key, identifier: identifier, named: named, by: count, source: source)
     }
     
     func stopTrace(key: String, identifier: UUID?) {
-        TimberSwift.timberApplicationDelegate?.stopTrace(key: key, identifier: identifier, source: source)
+        Timber.timberApplicationDelegate?.stopTrace(key: key, identifier: identifier, source: source)
     }
 }
 
-extension TimberSwift: NetworkDelegate {
+extension Timber: NetworkDelegate {
     func startedActivity() {
-        TimberSwift.timberApplicationDelegate?.networkActivityStarted(source: source)
+        Timber.timberApplicationDelegate?.networkActivityStarted(source: source)
     }
     
     func endedActivity() {
-        TimberSwift.timberApplicationDelegate?.networkActivityEnded(source: source)
+        Timber.timberApplicationDelegate?.networkActivityEnded(source: source)
     }
 }
