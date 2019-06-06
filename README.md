@@ -1,6 +1,5 @@
 # TimberSwift
 
-[![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![Swift 5.1](https://img.shields.io/badge/Swift-5.1-orange.svg?style=flat)](https://developer.apple.com/swift/)
 [![Platforms](https://img.shields.io/badge/Platforms-macOS%20%7C%20Linux%20%7C%20iOS%20%7C%20tvOS%20%7C%20watchOS-green.svg?style=flat)](https://swift.org/package-manager/)
 
@@ -25,10 +24,6 @@ A library to send all messages from either frameworks or the parent application 
   - Network Activity
 
 ## Installation
-
-### Carthage
-
-```github "MonsantoCo/TimberSwift" ~> 0.1.0```
 
 ### Package Manager
 
